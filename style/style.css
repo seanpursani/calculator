@@ -1,23 +1,45 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 main {
   display: -ms-grid;
   display: grid;
   height: 80vh;
-  width: 60vw;
-  gap: 0.2em;
+  width: 100vw;
+  gap: 0.3em;
   -ms-grid-rows: (1fr)[6];
       grid-template-rows: repeat(6, 1fr);
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
       grid-template-areas: "inp inp inp inp" "res res res div" "sev eigh nine mult" "four five six subt" "one two three addi" "zer zer dec equ";
   background-color: #0D1317;
+  padding: 0.5em;
 }
 
 input {
   background-color: #0D1317;
+  border: none;
+  color: #FFFFFF;
 }
 
 button {
-  border-radius: 100%;
+  border-radius: 5%;
   font-size: 5em;
   border: none;
 }
@@ -43,8 +65,6 @@ input {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: res;
-  border-radius: 25px;
-  margin: 0.1em 0.2em;
 }
 
 #decpoint {
@@ -142,7 +162,5 @@ input {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: zer;
-  border-radius: 25px;
-  margin: 0.1em 0.2em;
 }
 /*# sourceMappingURL=style.css.map */
