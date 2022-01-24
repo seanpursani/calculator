@@ -1,0 +1,133 @@
+main {
+  display: -ms-grid;
+  display: grid;
+  height: 80vh;
+  width: 60vw;
+  gap: 0.2em;
+      grid-template-areas: "inp inp inp inp" "res res res div" "sev eigh nine mult" "four five six subt" "one two three addi" "zer zer dec equ";
+  -ms-grid-rows: (1fr)[6];
+      grid-template-rows: repeat(6, 1fr);
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  background-color: #343a40;
+}
+
+button {
+  border-radius: 100%;
+  width: auto;
+  font-size: 4em;
+  border: none;
+}
+
+input {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: inp;
+  text-align: right;
+}
+
+#reset {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: res;
+}
+
+#decimal {
+  -ms-grid-row: 6;
+  -ms-grid-column: 3;
+  grid-area: dec;
+}
+
+#addition {
+  -ms-grid-row: 5;
+  -ms-grid-column: 4;
+  grid-area: addi;
+}
+
+#subtraction {
+  -ms-grid-row: 4;
+  -ms-grid-column: 4;
+  grid-area: subt;
+}
+
+#muliplication {
+  -ms-grid-row: 3;
+  -ms-grid-column: 4;
+  grid-area: mult;
+}
+
+#division {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: div;
+}
+
+#equal {
+  -ms-grid-row: 6;
+  -ms-grid-column: 4;
+  grid-area: equ;
+}
+
+#num-1 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: one;
+}
+
+#num-2 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
+  grid-area: two;
+}
+
+#num-3 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+  grid-area: three;
+}
+
+#num-4 {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: four;
+}
+
+#num-5 {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: five;
+}
+
+#num-6 {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+  grid-area: six;
+}
+
+#num-7 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: sev;
+}
+
+#num-8 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: eigh;
+}
+
+#num-9 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: nine;
+}
+
+#num-0 {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: zer;
+}
+/*# sourceMappingURL=style.css.map */
