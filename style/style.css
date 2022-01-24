@@ -1,22 +1,55 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 main {
   display: -ms-grid;
   display: grid;
   height: 80vh;
-  width: 60vw;
-  gap: 0.2em;
-      grid-template-areas: "inp inp inp inp" "res res res div" "sev eigh nine mult" "four five six subt" "one two three addi" "zer zer dec equ";
+  width: 100vw;
+  gap: 0.3em;
   -ms-grid-rows: (1fr)[6];
       grid-template-rows: repeat(6, 1fr);
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-  background-color: #343a40;
+      grid-template-areas: "inp inp inp inp" "res res res div" "sev eigh nine mult" "four five six subt" "one two three addi" "zer zer dec equ";
+  background-color: #0D1317;
+  padding: 0.5em;
+}
+
+input {
+  background-color: #0D1317;
+  border: none;
+  color: #FFFFFF;
 }
 
 button {
-  border-radius: 100%;
-  width: auto;
-  font-size: 4em;
+  border-radius: 5%;
+  font-size: 5em;
   border: none;
+}
+
+.opcolor {
+  background-color: #9d6a89;
+}
+
+.rescolor {
+  background-color: #A8B4A5;
 }
 
 input {
@@ -34,7 +67,7 @@ input {
   grid-area: res;
 }
 
-#decimal {
+#decpoint {
   -ms-grid-row: 6;
   -ms-grid-column: 3;
   grid-area: dec;

@@ -1,8 +1,25 @@
+@import "./color.scss";
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 main {
     display: grid;
     height: 80vh;
-    width: 60vw;
-    gap: 0.2em;
+    width: 100vw;
+    gap: 0.3em;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-areas: 
     "inp inp inp inp"
     "res res res div"
@@ -10,16 +27,28 @@ main {
     "four five six subt"
     "one two three addi"
     "zer zer dec equ";
-    grid-template-rows: repeat(6, 1fr);
-    grid-template-columns: repeat(4, 1fr);
-    background-color: #343a40;
+    background-color: #0D1317;
+    padding: 0.5em;
+}
+
+input {
+    background-color: $backcolor;
+    border: none;
+    color: $textcolor;
 }
 
 button {
-    border-radius: 100%;
-    width: auto;
-    font-size: 4em;
+    border-radius: 5%;
+    font-size: 5em;
     border: none;
+}
+
+.opcolor {
+    background-color: $opcolor;
+}
+
+.rescolor {
+    background-color: $rescolor;
 }
 
 
@@ -32,7 +61,7 @@ input {
     grid-area: res;
 }
 
-#decimal {
+#decpoint {
     grid-area: dec;
 }
 
