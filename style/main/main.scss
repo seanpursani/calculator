@@ -4,6 +4,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -23,25 +24,13 @@ main {
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas: 
     "inp inp inp inp"
-    "res res res div"
+    "res plusmin perc div"
     "sev eigh nine mult"
     "four five six subt"
     "one two three addi"
     "zer zer dec equ";
     background-color: #0D1317;
     padding: 0.5em;
-}
-
-input {
-    background-color: $backcolor;
-    border: none;
-    color: $textcolor;
-}
-
-button {
-    border-radius: 5%;
-    font-size: 5em;
-    border: none;
 }
 
 .opcolor {
@@ -52,14 +41,30 @@ button {
     background-color: $rescolor;
 }
 
+button {
+    border-radius: 5%;
+    font-size: 4em;
+    border: none;
+}
 
-input {
+#input {
     grid-area: inp;
     text-align: right;
+    background-color: $backcolor;
+    border: none;
+    color: $textcolor;
 }
 
 #reset {
     grid-area: res;
+}
+
+#plusminus {
+    grid-area: plusmin;
+}
+
+#percentage {
+    grid-area: perc;
 }
 
 #decpoint {
