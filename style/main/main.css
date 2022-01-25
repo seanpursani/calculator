@@ -1,12 +1,14 @@
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 548px) {
   main {
-    max-width: 50vw;
+    max-width: 60vw;
   }
 }
 
 * {
   padding: 0;
   margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -33,21 +35,9 @@ main {
       grid-template-rows: repeat(6, 1fr);
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-      grid-template-areas: "inp inp inp inp" "res res res div" "sev eigh nine mult" "four five six subt" "one two three addi" "zer zer dec equ";
+      grid-template-areas: "inp inp inp inp" "res plusmin perc div" "sev eigh nine mult" "four five six subt" "one two three addi" "zer zer dec equ";
   background-color: #0D1317;
   padding: 0.5em;
-}
-
-input {
-  background-color: #0D1317;
-  border: none;
-  color: #FFFFFF;
-}
-
-button {
-  border-radius: 5%;
-  font-size: 5em;
-  border: none;
 }
 
 .opcolor {
@@ -58,19 +48,39 @@ button {
   background-color: #A8B4A5;
 }
 
-input {
+button {
+  border-radius: 5%;
+  font-size: 4em;
+  border: none;
+}
+
+#input {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 4;
   grid-area: inp;
   text-align: right;
+  background-color: #0D1317;
+  border: none;
+  color: #FFFFFF;
 }
 
 #reset {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
   grid-area: res;
+}
+
+#plusminus {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: plusmin;
+}
+
+#percentage {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: perc;
 }
 
 #decpoint {
