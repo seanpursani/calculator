@@ -12,15 +12,16 @@ calculator = {
                 input.innerHTML = "";
                 currCalculation.push(calcButton.innerHTML);
                 break;
+            case "res":
+                currCalculation = [];
+                input.innerHTML = "";
+            case "equals":
+                if (currCalculation.length > 0) {
+                    let numArr = currCalculation.map((num) => (num == Number) ? Number(num));
+                    console.log(numArr);
+                }
         }
-        // if (currCalculation[-1] === "=") {
-        //     const sum = currCalculation.map((num) => {
-        //         if (num == Number) parseInt(num);
-        //     })
-        //     console.log(sum);
-        // }
     })
 }
 
-const currCalculation = [];
-console.log(currCalculation);
+let currCalculation = [];

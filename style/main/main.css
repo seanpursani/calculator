@@ -40,6 +40,7 @@ main {
   padding: 0.5em;
 }
 
+.equals,
 .op {
   background-color: #9d6a89;
 }
