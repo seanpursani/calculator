@@ -40,11 +40,13 @@ main {
   padding: 0.5em;
 }
 
-.opcolor {
+.op {
   background-color: #9d6a89;
 }
 
-.rescolor {
+#plusminus,
+#percentage,
+.res {
   background-color: #A8B4A5;
 }
 
@@ -61,6 +63,7 @@ button {
   grid-area: inp;
   text-align: right;
   background-color: #0D1317;
+  font-size: 5em;
   border: none;
   color: #FFFFFF;
 }
@@ -113,7 +116,7 @@ button {
   grid-area: div;
 }
 
-#equal {
+.equals {
   -ms-grid-row: 6;
   -ms-grid-column: 4;
   grid-area: equ;

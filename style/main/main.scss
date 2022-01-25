@@ -33,11 +33,13 @@ main {
     padding: 0.5em;
 }
 
-.opcolor {
+.op {
     background-color: $opcolor;
 }
 
-.rescolor {
+#plusminus,
+#percentage,
+.res {
     background-color: $rescolor;
 }
 
@@ -51,6 +53,7 @@ button {
     grid-area: inp;
     text-align: right;
     background-color: $backcolor;
+    font-size: 5em;
     border: none;
     color: $textcolor;
 }
@@ -87,7 +90,7 @@ button {
     grid-area: div;
 }
 
-#equal {
+.equals {
     grid-area: equ;
 }
 
