@@ -6,10 +6,14 @@ calculator = {
         switch (calcButton.className) {
             case "num": 
                 input.innerHTML += calcButton.innerHTML;
-                currCalculation.push(calcButton.innerHTML);
+                num.push(Number(calcButton.innerHTML));
                 console.log(currCalculation);
                 break;
             case "op":
+                // joining first number
+                num.join('');
+                // clear the array 
+                // store the operator 
                 input.innerHTML = "";
                 currCalculation.push(calcButton.innerHTML);
                 console.log(currCalculation);
@@ -19,16 +23,13 @@ calculator = {
                 input.innerHTML = "";
                 console.log(currCalculation);
             case "equals":
+                // join second number 
+                // do maths 
                 if (currCalculation.length > 0) {
-                    let numArr = currCalculation.map((num) => {
-                        if (num == Number) {
-                            Number(num);
-                        }
-                    })
                 }
-                console.log(currCalculation);
         }
     })
 }
 
 let currCalculation = [];
+let num1 = [];
