@@ -7,19 +7,26 @@ calculator = {
             case "num": 
                 input.innerHTML += calcButton.innerHTML;
                 currCalculation.push(calcButton.innerHTML);
+                console.log(currCalculation);
                 break;
             case "op":
                 input.innerHTML = "";
                 currCalculation.push(calcButton.innerHTML);
+                console.log(currCalculation);
                 break;
             case "res":
                 currCalculation = [];
                 input.innerHTML = "";
+                console.log(currCalculation);
             case "equals":
                 if (currCalculation.length > 0) {
-                    let numArr = currCalculation.map((num) => (num == Number) ? Number(num));
-                    console.log(numArr);
+                    let numArr = currCalculation.map((num) => {
+                        if (num == Number) {
+                            Number(num);
+                        }
+                    })
                 }
+                console.log(currCalculation);
         }
     })
 }
