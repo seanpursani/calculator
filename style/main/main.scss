@@ -20,8 +20,8 @@ main {
     height: 80vh;
     width: 100vw;
     gap: 0.3em;
-    grid-template-rows: repeat(6, 1fr);
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, minmax(1em, 1fr));
+    grid-template-columns: repeat(4, minmax(1em, 1fr));
     grid-template-areas: 
     "inp inp inp inp"
     "res plusmin perc div"
@@ -30,6 +30,7 @@ main {
     "one two three addi"
     "zer zer dec equ";
     background-color: #0D1317;
+    border-radius: 2%;
     padding: 0.5em;
 }
 
@@ -53,8 +54,10 @@ button {
 #input {
     grid-area: inp;
     text-align: right;
+    margin: 0 0.2em;
+    margin-top: 0.3em;
     background-color: $backcolor;
-    font-size: 4.5em;
+    font-size: 3.5em;
     border: none;
     color: $textcolor;
 }

@@ -31,12 +31,13 @@ main {
   height: 80vh;
   width: 100vw;
   gap: 0.3em;
-  -ms-grid-rows: (1fr)[6];
-      grid-template-rows: repeat(6, 1fr);
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: (minmax(1em, 1fr))[6];
+      grid-template-rows: repeat(6, minmax(1em, 1fr));
+  -ms-grid-columns: (minmax(1em, 1fr))[4];
+      grid-template-columns: repeat(4, minmax(1em, 1fr));
       grid-template-areas: "inp inp inp inp" "res plusmin perc div" "sev eigh nine mult" "four five six subt" "one two three addi" "zer zer dec equ";
   background-color: #0D1317;
+  border-radius: 2%;
   padding: 0.5em;
 }
 
@@ -63,8 +64,10 @@ button {
   -ms-grid-column-span: 4;
   grid-area: inp;
   text-align: right;
+  margin: 0 0.2em;
+  margin-top: 0.3em;
   background-color: #0D1317;
-  font-size: 4.5em;
+  font-size: 3.5em;
   border: none;
   color: #FFFFFF;
 }

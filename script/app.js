@@ -26,7 +26,7 @@ interface.addEventListener("click", (event) => {
             case "equals":
                 calculateSum.push(Number(numArr.join(''))); // join second number 
                 let total = calculate(calculateSum);
-                input.innerHTML = total.toFixed(2);
+                input.innerHTML = total;
                 numArr = [];
                 calculateSum = [];
                 
@@ -36,9 +36,9 @@ interface.addEventListener("click", (event) => {
 
 const calculate = (arr) => { 
 
-    // Prevent INFINITY e.g. 6 / = INFINITY instead return 6;
+    // Prevent INFINITY e.g. 6 / = infinity, instead return 6;
     // e.g. [6, /] ----> Returns 6
-    if (arr.length === 3 && arr[1] === "/" && arr[2] === 0) {
+    if (arr.length === 3 && arr[1] === "÷" && arr[2] === 0) {
         return arr[0];
     }  
 
@@ -55,20 +55,20 @@ const calculate = (arr) => {
             total = arr[i-1] * arr[i+1];
             arr.splice(i-1, 3, total)
             i = 0; // reset index to Zero
-        } else if (arr[i] === "/") {
+        } else if (arr[i] === "÷") {
             let total = 0
             total = arr[i-1] / arr[i+1];
             arr.splice(i-1, 3, total)
-            i = 0; // reset index to Zero
+            i = 0; 
         } else if (arr[i] === "%") {
             let total = 0
             total = arr[i-1] / 100;
             arr.splice(i-1, 3, total)
-            i = 0; // reset index to Zero
+            i = 0; 
         }
     }
 
-    // Do the +/- Calculations
+    // Do the +/- calculations to get total 
     let runningTotal = arr[0];
     for (let i = 1; i< arr.length; i+=2) {
         if (arr[i] === "+") {
@@ -77,6 +77,13 @@ const calculate = (arr) => {
             runningTotal = runningTotal - arr[i+1];
         } 
     }
-    return runningTotal;
+
+
+    if (runningTotal.toString().length === 4) {
+        return runningTotal.toFixed(2);
+    } else {
+        return runningTotal;
+    }
+    
 
 }
