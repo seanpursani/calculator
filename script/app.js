@@ -1,18 +1,55 @@
-const input = document.querySelector("input");
-const reset = document.querySelector("reset");
-const add = document.querySelector("addition");
-const subtract = document.querySelector("subtraction");
-const divide = document.querySelector("division");
-const multiply = document.querySelector("mulitplication");
-const equals = document.querySelector("equals");
-const num0 = document.querySelector("num-0");
-const num1 = document.querySelector("num-1");
-const num2 = document.querySelector("num-2");
-const num3 = document.querySelector("num-3");
-const num4 = document.querySelector("num-4");
-const num5 = document.querySelector("num-5");
-const num6 = document.querySelector("num-6");
-const num7 = document.querySelector("num-7");
-const num8 = document.querySelector("num-8");
-const num9 = document.querySelector("num-9");
-const decimalPoint = document.querySelector("decpoint");
+const buttons = document.querySelectorAll("button"); 
+const input = document.querySelector("#input"); 
+const interface = document.querySelector(".interface"); 
+let numArr = [];
+let calculateSum = [];
+
+interface.addEventListener("click", (event) => {
+    const calcButton = event.target;
+        switch (calcButton.className) {
+            case "num": 
+                input.innerHTML += calcButton.innerHTML;
+                numArr.push(calcButton.innerHTML);
+                break;
+            case "op":
+                // if the most recent value is NaN 
+                calculateSum.push(Number(numArr.join(''))); // joining first number
+                numArr = []; // clear the number array 
+                calculateSum.push(calcButton.innerHTML) // store the operator 
+                input.innerHTML = "";
+                break;
+            case "res":
+                numArr = [];
+                calculateSum = [];
+                input.innerHTML = "";
+            case "equals":
+                // Can't end on operation HAS to be number UNLESS percent
+                // if anything NaN throw error
+                calculateSum.push(Number(numArr.join(''))); // join second number 
+                console.log(calculateSum);
+                let total = calculate(calculateSum);
+                input.innerHTML = total;
+                numArr = [];
+                calculateSum = [];
+                
+        }
+    })
+    
+const calculate = (arr) => {
+    let runningTotal = arr[0];
+    for (let i = 1; i< arr.length; i+=2) {
+        if (arr[i] === "*") {
+            runningTotal = runningTotal * arr[i+1];
+        } else if (arr[i] === "%") {
+            runningTotal = runningTotal / 100;
+            // maybe return
+        } else if (arr[i] === "/") {
+            runningTotal = runningTotal / arr[i+1];
+        } else if (arr[i] === "-") {
+            runningTotal = runningTotal - arr[i+1];
+        } else {
+            runningTotal = runningTotal + arr[i+1];
+        }
+    return runningTotal;
+    }
+}
